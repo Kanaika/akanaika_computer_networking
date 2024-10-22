@@ -1,0 +1,28 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char a[100];
+    printf("Enter the binary number:");
+    scanf("%s",a);
+    int count=0;
+    char stuffed[200];
+    int n=strlen(a);
+    int j=0;
+    for(int i=0;i<n;i++){
+        stuffed[j++]=a[i];
+        if(a[i]== '1'){
+            count++;
+        }else{
+            count=0;
+        }
+        if(count== 5){
+            stuffed[j++]='0';
+            count=0;
+        }
+    }
+    stuffed[j]= '\0';
+    printf("after bit stuffing: %s\n",stuffed);
+
+    return 0;
+}
